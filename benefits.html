@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Know your benefits | Paymatrix</title>
+		<link rel="stylesheet" href="./benefits.css">
+		<link rel="stylesheet" href="./bg-credit-card-v2.css">
+		<script type="text/javascript" src="./benefits.js"></script>
+	</head>
+	<body>	
+		<header>
+			<a class="logo-link" href="https://paymatrix.in/home/index">
+				<img class="logo" src="./images/logo-home.png"/>
+			</a>
+			<img class="header-img" src="./images/benefits_bg.png"/>
+		</header>
+		<div class="radio-container">
+			<label class="radio-label">
+				<input class="radio-input" type="radio" name="type" value="businessman">
+				<img class="radio-image radio-image-inactive" src="./images/businessman.svg">
+			</label>
+			<label class="radio-label">
+				<input class="radio-input" type="radio" name="type" value="agent">
+				<img class="radio-image radio-image-active" src="./images/agent.svg">
+			</label>
+		</div>
+		<h1 class="align-center">Collect your rent on-time from your tenant</h1>
+		<hr class="content-margin"/>
+		<p class="align-center content-margin" style="font-size: 17px;">
+			Paymatrix enables you to timely collect rent from your tenant by extending the option of paying rent on credit card. As a landlord or property manager, you can also issue <a href="https://paymatrix.in/home/receipts" style="color: #0071bc;">rent receipts</a> online, generate  <a href="https://paymatrix.in/rental-agreement" style="color: #0071bc;">rent agreements</a>, <a href="https://paymatrix.in/home/screening" style="color: #0071bc;">screen</a> your potential tenants and manage multiple properties all at a click on your dashboard.
+			All these mean hassle-free rent management and better service to your tenants!.
+		</p>
+		<div class="table-container">
+			<div class="table-header">Benefits</div>
+			<table class="align-center table" style="width: 100%;">
+				<tr>
+					<th style="width: 40%;"></th>
+					<th style="width: 30%;">Conventional way</th> 
+					<th style="width: 30%; color: #0071bc;">Paymatrix</th>
+				</tr>
+				<tr>
+					<td class="right-align">Collection Mode</td>
+					<td>Cash/Net Banking</td> 
+					<td style="color: #1ab394;">Net Banking/Credit card</td>
+				</tr>
+				<tr>
+					<td class="right-align">Security Deposit Management</td>
+					<td>NO</td> 
+					<td style="color: #1ab394;">YES</td>
+				</tr>
+				<tr>
+					<td class="right-align">Automated issue of Rent receipts</td>
+					<td>NO</td> 
+					<td style="color: #1ab394;">YES</td>
+				</tr>
+				<tr>
+					<td class="right-align">Rent agreements</td>
+					<td>YES</td> 
+					<td style="color: #1ab394;">YES</td>
+				</tr>
+				<tr>
+					<td class="right-align">Discounts and Rewards</td>
+					<td>NO</td> 
+					<td style="color: #1ab394;">YES</td>
+				</tr>
+				<tr>
+					<td class="right-align">Branding of your property</td>
+					<td>NO</td> 
+					<td style="color: #1ab394;">YES</td>
+				</tr>
+				<tr>
+					<td class="right-align">Tenant Screening</td>
+					<td>NO</td> 
+					<td style="color: #1ab394;">YES</td>
+				</tr>
+			</table>
+		</div>
+		<div class="credit-card-section">
+			<h2 class="align-center credit-card-header">EXPLORE YOUR CREDIT CARD BENEFITS</h2>
+			<div class="credit-card-container"> 
+				<div class="credit-card-left" id="credit-card-left">
+					<div class="credit-card-know-how align-center">
+						Know how to get <br/>
+						more out of your credit card !
+					</div>
+					<table style="width: 100%; margin-left: 30px;">
+						<tr>
+							<th style="width: 50%;">
+							</th>
+							<th style="width: 50%;">
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<img class="img1"><span>Reward points</span>
+							</td>
+							<td>
+								<img class="img2"><span>Airmiles</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img class="img3"><span>Cashbacks</span>
+							</td>
+							<td>
+								<img class="img4"><span>Fuel cards</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<img class="img5"><span>Gift vouchers</span>
+							</td>
+						</tr>
+					</table>					
+				</div>
+				<div class="credit-card-right" id="credit-card-right">
+					<form id="benefits_form" onsubmit="return view_benefits()">
+						<div class="dropdown">
+							<label class="label" for="bankname">Select Bank</label>
+							<select name="bankname" id="bankname" required onchange="bankChanged(this.value)">
+								<option value="" selected="selected" disabled="">Select Bank Name</option>
+							</select>
+						</div>
+						<div class="dropdown">
+							<label class="label" for="cardname">Select Credit card </label>
+							<select name="cardname" id="cardname" required>
+								<option value="" selected="selected" disabled="">Select Card Name</option>
+							</select>
+						</div>
+						<button class="benefits-button" type="">View benefits</button>
+					</form>
+				</div>
+				<div class="credit-card-right2" style="display: none;" id="credit-card-right2">
+					<div style="padding-left: 40px;">
+						<div class="item" style="width: 33%">
+							<a id="card-link">
+								<img id="card-image">
+							</a>
+						</div>
+						<div class="item" style="width: 58%">
+							<label class="label" for="rent">Enter your rent</label>
+							<input name="rent" id="rent" class="input-rent" onchange="rentChanged()" value="10000">
+						</div>
+						<div style="clear:both;"></div>
+					</div>
+					<div style="padding: 10px; height: 258px;">
+						<div style="margin-bottom: 5px;">
+							Award amount: <span class="orange-text">Rs. <span id="cost"></span>*<span>
+						</div>
+						<div style="margin-bottom: 5px;">
+							Award type: <span class="orange-text">Membership Reward points<span>
+						</div>
+						<div class="benefits_text">Your Card Benefits</div>
+						<div id="benefits_details" class="benefits_text">
+							
+						</div>
+						<div>
+							<a id="card-link2">
+							<p style="text-align: right;" class="label">know more details</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="disclaimer">
+				<p>Disclaimer: </p>
+				<p>*The above explanation is only for illustration purposes only and Paymatrix cannot be held responsible if the credit card provider updates or stops the promotion. Paymatrix may just advertise promotions of banks and other companies but in no way does it endorse any promotion or marketing material hosted by the partners. User discretion and diligence is hereby recommended to check the updated content with the partner directly for any further information or query on any promotion or dispute. Paymatrix can’t be held responsible for any disputes arising in this context. Further, by registering and availing the services on Paymatrix, users hereby acknowledge to have read all the terms of use and related disclaimers.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
